@@ -1,0 +1,286 @@
+:root {
+  --ffPoppins: "Poppins", sans-serif;
+  --themeColor: #899878;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  height: 100vh;
+  overflow: hidden;
+  font-family: var(--ffPoppins);
+  background: linear-gradient(var(--themeColor), #a1c677);
+  font-size: 1em;
+}
+header {
+  height: 65px;
+}
+.logoCnt {
+  height: 100%;
+  width: fit-content;
+  align-content: center;
+  font-size: 1em;
+}
+.logoCnt a {
+  text-decoration: none;
+  color: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 12px;
+}
+.logoCnt img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  margin-right: 8px;
+  border: 1px solid;
+  padding: 2px;
+}
+
+/* Main styling */
+main {
+  height: calc(100% - 65px);
+  align-content: center;
+}
+.sec-one {
+  display: flex;
+  justify-content: center;
+}
+.displayContainer {
+  min-width: 500px;
+  height: 600px;
+  position: relative;
+  box-shadow: 0 0 12px -6px;
+  border-radius: 12px;
+}
+
+.mainCnt {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.image-shake {
+  animation: imageShake 0.3s ease 3;
+}
+
+.mainCnt .mic1 {
+  rotate: 90deg;
+}
+.mainCnt .mic2 {
+  rotate: -90deg;
+}
+
+.pointsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 24px;
+}
+.userPointsCnt,
+.computerPointsCnt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+  font-size: 1.2em;
+  position: relative;
+}
+.userWinCount,
+.computerWinCount {
+  font-size: 2.5em;
+  font-weight: 900;
+  font-family: "Oswald", sans-serif;
+}
+.editUserNameCnt {
+  height: 30px;
+  width: 30px;
+  padding: 6px;
+  position: absolute;
+  bottom: -25px;
+  cursor: pointer;
+}
+
+.userSelectoptions {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  position: absolute;
+  bottom: 12px;
+  width: 100%;
+}
+.userSelectoptions div {
+  padding: 8px;
+  min-width: 100px;
+  text-align: center;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  transition: 0.1s ease;
+}
+.userSelectoptions div:hover {
+  background: rgb(208, 208, 208);
+}
+
+.historyContainer {
+  height: 600px;
+  min-width: 380px;
+  margin-left: 24px;
+  padding: 12px;
+  box-shadow: 0 0 12px -6px;
+  border-radius: 12px;
+  position: absolute;
+  visibility: hidden;
+  transform: translate(400px);
+  transition: all 0.3s ease;
+  scale: 0;
+  overflow: auto;
+  padding-top: 48px;
+}
+.historyTitle {
+  font-size: 1.25em;
+  font-weight: 500;
+  position: fixed;
+  top: 12px;
+}
+.gameinfoCnt {
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  backdrop-filter: blur(120px);
+  border: 1px solid;
+  border-radius: 8px;
+  margin-bottom: 6px;
+}
+
+.gameCount {
+  height: 35px;
+  width: 35px;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+  border: 1px solid;
+}
+.gameUCchoices {
+  display: flex;
+  flex-direction: column;
+  min-width: 220px;
+  margin-left: 12px;
+}
+.gameinfoUserChoice::before {
+  content: "User : ";
+  font-size: 0.8em;
+}
+.gameinfoComputerChoice::before {
+  content: "Computer : ";
+  font-size: 0.8em;
+}
+.gameWinInfo {
+  padding: 4px;
+  min-width: 80px;
+  text-align: center;
+  margin-left: auto;
+  border-radius: 6px;
+}
+
+@keyframes imageShake {
+  50% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+
+@media screen and (min-width: 505px) and (max-width: 920px) {
+  body {
+    overflow-y: auto;
+    background-attachment: fixed;
+  }
+  .sec-one {
+    flex-direction: column;
+  }
+  .displayContainer {
+    box-shadow: 0 0;
+    height: calc(100vh - 65px) !important;
+  }
+  .historyContainer {
+    box-shadow: 0 0;
+    width: 100%;
+    margin-left: 0;
+  }
+}
+@media screen and (min-width: 200px) and (max-width: 504px) {
+  body {
+    overflow-y: auto;
+    background-attachment: fixed;
+    width: 100vw;
+    background: rgba(234, 234, 234, 0.82);
+    background: linear-gradient(
+      rgba(255, 174, 0, 0.1),
+      rgba(212, 255, 0, 0.1),
+      rgba(0, 128, 0, 0.1)
+    );
+  }
+  main {
+    width: 100%;
+  }
+  .sec-one {
+    flex-direction: column;
+    width: 100%;
+    height: calc(100% - 65px);
+  }
+  .displayContainer {
+    box-shadow: 0 0;
+    min-width: unset;
+    width: 100%;
+    height: 50%;
+    position: inherit;
+  }
+  .editUserNameCnt {
+    top: 0;
+    right: 0;
+  }
+  .mainCnt {
+    display: flex;
+    height: 250px;
+  }
+  .mainImageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+  }
+  .mainImageContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: drop-shadow(0 0 4px);
+  }
+  .userSelectoptions {
+    z-index: 2;
+    position: fixed;
+    backdrop-filter: blur(12px);
+    bottom: 12px;
+    padding: 12px;
+    width: 94%;
+    margin-left: 3%;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.85);
+  }
+
+  .historyContainer {
+    min-width: unset;
+    width: 100%;
+    margin-left: 0;
+    box-shadow: 0 0;
+    min-height: 50%;
+  }
+}

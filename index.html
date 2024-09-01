@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RockPaperScissors</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <link rel="icon" type="png" href="assets/rockPaperSiccorsLogo.png" />
+  </head>
+  <body>
+    <header>
+      <div class="logoCnt">
+        <a href="">
+          <img
+            src="assets/rockPaperSiccorsLogo.png"
+            alt="Rock paper Scissors logo"
+          />
+          <span>RockPaperScissors</span>
+        </a>
+      </div>
+    </header>
+    <main>
+      <section class="sec-one">
+        <div class="displayContainer">
+          <div class="pointsContainer">
+            <div class="userPointsCnt">
+              <div class="userWinCount">0</div>
+              <div id="userName">User</div>
+              <div class="editUserNameCnt">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                  <path
+                    d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0L362.3 51.7l97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2L471.6 21.7zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.7 15.7-7.4 21.9-13.5L437.7 172.3 339.7 74.3 172.4 241.7zM96 64C43 64 0 107 0 160L0 416c0 53 43 96 96 96l256 0c53 0 96-43 96-96l0-96c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 96c0 17.7-14.3 32-32 32L96 448c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l96 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 64z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="computerPointsCnt">
+              <div class="computerWinCount">0</div>
+              <div>Computer</div>
+            </div>
+          </div>
+          <div class="mainCnt">
+            <div class="mic1 mainImageContainer">
+              <img
+                class="userSelectedImage"
+                src="assets/rockImage.png"
+                alt="User Selected choice Image"
+              />
+            </div>
+            <div class="mic2 mainImageContainer">
+              <img
+                class="computerSelectedImage"
+                src="assets/rockComputerImage.png"
+                alt="User Selected choice Image"
+              />
+            </div>
+          </div>
+          <div class="userSelectoptions">
+            <div class="selectRock userOption" id="Rock">Rock</div>
+            <div class="selectPaper userOption" id="Paper">Paper</div>
+            <div class="selectScissors userOption" id="Scissors">Scissors</div>
+          </div>
+        </div>
+        <div class="historyContainer">
+          <div class="historyTitle">History</div>
+        </div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+    <script>
+      let nameEditBtn = document.querySelector(".editUserNameCnt");
+      let userName = document.getElementById("userName");
+
+      nameEditBtn.addEventListener("click", () => {
+        let newUserName = prompt("Enter your Name");
+
+        userName.innerText = newUserName;
+      });
+    </script>
+    <script>
+      let allImagesInThePage = document.querySelectorAll("img");
+
+      allImagesInThePage.forEach((image) => {
+        image.setAttribute("loading", "lazy");
+      });
+    </script>
+  </body>
+</html>
